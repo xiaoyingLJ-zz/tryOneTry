@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westus"
+        },
+        "virtualMachineName": {
+            "value": "xiaoyingTestVM"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_A1"
+        },
+        "adminUsername": {
+            "value": "hbzhxying"
+        },
+        "storageAccountName": {
+            "value": "xiaoyingdisks688"
+        },
+        "virtualNetworkName": {
+            "value": "xiaoying-vnet"
+        },
+        "networkInterfaceName": {
+            "value": "xiaoyingtestvm8"
+        },
+        "networkSecurityGroupName": {
+            "value": "xiaoyingTestVM-nsg"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "xiaoyingdiag614"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/xiaoyingdiag614"
+        },
+        "addressPrefix": {
+            "value": "10.1.0.0/24"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "subnetPrefix": {
+            "value": "10.1.0.0/24"
+        },
+        "publicIpAddressName": {
+            "value": "xiaoyingTestVM-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        }
+    }
+}

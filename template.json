@@ -33,6 +33,19 @@
                 }            
             ]
         }*/
+        { 
+            "name": "[concat('examplecopy-', variables('openports')[copyIndex()])]", 
+            "type": "Microsoft.Web/sites", 
+            "location": "[resourceGroup().location]", 
+            "apiVersion": "2015-08-01",
+            "copy": { 
+               "name": "websitescopy", 
+               "count": "[length(parameters('openports'))]" 
+            }, 
+            "properties": {
+                "serverFarmId": "hostingPlanName"
+            } 
+        }
     ],
     "outputs": {
         "ports": {

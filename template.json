@@ -16,23 +16,6 @@
         "openports": "[split(parameters('openports'), ',')]"
     },
     "resources": [
-        /*{
-            "name": "[variables('dataFactoryName')]",
-            "apiVersion": "[variables('apiVersion')]",
-            "type": "Microsoft.DataFactory/datafactories",
-            "location": "eastus",
-            "resources": [
-                {
-                    "dependsOn": [ "[concat('Microsoft.DataFactory/dataFactories/', variables('dataFactoryName'))]" ],
-                    "type": "gateways",
-                    "apiVersion": "[variables('apiVersion')]",
-                    "name": "GatewayUsingARM",
-                    "properties": {
-                        "description": "my gateway"
-                    }
-                }            
-            ]
-        }*/
         { 
             "name": "[concat('examplecopy-', variables('openports')[copyIndex()])]", 
             "type": "Microsoft.Web/sites", 
@@ -46,12 +29,6 @@
                 "serverFarmId": "hostingPlanName"
             } 
         }
-    ],
-    "outputs": {
-        "ports": {
-            "type": "string",
-            "value": "concat(variables('openports')[0])"
-        }
-   }
+    ]
 }
 }

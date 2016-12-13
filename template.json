@@ -2,21 +2,21 @@
     "contentVersion": "1.0.0.0",
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "parameters": {
-        "first": {
-            "type": "array",
+        "openports": {
+            "type": "string",
             "metadata": {
-                "description": "Values to use for taking"
-            },
-        "defaultValue": [ "one", "two", "three" ]
+                "description": "Format: 8050, 443, 80"
+            }
         }
     },
     "variables": {
         "dataFactoryName":  "xiaoyingDF",
         "apiVersion": "2015-10-01",
-        "singleQuote": "'"
+        "singleQuote": "'",
+        "openports": "[split(parameters('openports'), ',')]"
     },
     "resources": [
-        {
+        /*{
             "name": "[variables('dataFactoryName')]",
             "apiVersion": "[variables('apiVersion')]",
             "type": "Microsoft.DataFactory/datafactories",
@@ -32,6 +32,13 @@
                     }
                 }            
             ]
+        }*/
+    ],
+    "outputs": {
+        "ports": {
+            "type": "string",
+            "value": "concat(variables('openports')[0])"
         }
-    ]
+   }
+}
 }

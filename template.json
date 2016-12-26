@@ -13,7 +13,7 @@
         "dataFactoryName":  "xiaoyingDF",
         "apiVersion": "2015-10-01",
         "singleQuote": "'",
-        "openports": "[split(parameters('openports'), ',')]"
+        "openports": ["one","two"]
     },
     "resources": [
         { 
